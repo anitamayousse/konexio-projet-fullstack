@@ -1,18 +1,16 @@
-function getAllCountries () {
-    $("button").click(function () {
+$("#btnShowData").click(function getAllCountries() {
         $.ajax({
           url:"https://restcountries.com/v3.1/all",
           success: function (data) {
             
             data.forEach((country) => {
               
-              $("#exercise").append(
+              $("i").append(
              `<p> ${country.name.common}</p>`
              )
     
             })
           }
         });
-      });
-    
-}
+});
+
