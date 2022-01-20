@@ -6,19 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries API</title>
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
 </head>
 <body>
-    <h2>Countries API</h2>
-    <div>
-    <input placeholder="Search" id="country-name"/>
-    <div>
-    <input type="radio" id="Countries" name="pays" value="text"> Recherche par nom de pays
-    <input type="radio" id="capital" name="capitale" value="text"> Recherche par nom de capitale
-    <input type="radio" id="region" name="région" value="text"> Recherche par région
+    <section class="container">
+    <h2 class="text-center mb-3">Countries API</h2>
+    <div class="mb-3">
+    <input class="form-control" placeholder="Search" id="country-name"/>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" id="Countries" name="pays" value="text"> 
+    <label class="form-check-label" for="flexRadioDefault1">
+    Recherche par nom de pays
+    </label>
     </div>
-    <div>
-        <label for="cars" id="options">Zone géographique</label>
-        <select name="cars" id="options">
+    <div class="form-check">
+    <input class="form-check-input" type="radio" id="capital" name="capitale" value="text"> 
+    <label class="form-check-label" for="flexRadioDefault1">
+    Recherche par nom de capitale
+    </label>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="radio" id="region"  name="région" value="text"> 
+    <label class="form-check-label" for="flexRadioDefault1">
+    Recherche par région
+    </label>
+    </div>
+    <div class="col-3">
+        <select name="cars" id="options" class="form-select  mb-3">
           <option value="Europe">Europe</option>
           <option value="Asia">Asia</option>
           <option value="Africa">Africa</option>
@@ -26,12 +40,18 @@
     </div>
     </div>
     <div>
-        <button id="btnShowData">Show Data</button>
+        <button id="btnShowData" class="btn btn-primary" type="button" >
+            Show Data
+        </button>
+        <button id="btnShowData" class="btn btn-white border-dark" type="button" >
+            Reset
+        </button>
     </div>
 
     <ul>
         <i></i>
     </ul>
+    </section>
     <script src="../assets/js/functions.js"></script>
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../front/script.js"></script>

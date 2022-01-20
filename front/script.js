@@ -52,7 +52,9 @@ function search(){
           
           success: function (data) {
             countriesList.empty();
-              $("i").html('<b>Pays: </b>' + data).appendTo(countriesList) 
+            data.forEach((country) => {
+              $("i").html('<b>Pays: </b>' + country.continents).appendTo(countriesList) 
+            })
           }
         });
       }
@@ -62,7 +64,9 @@ function search(){
           
           success: function (data) {
             countriesList.empty();
-              $("i").html('<b>Pays: </b>' + data).appendTo(countriesList) 
+            data.forEach.map((country) => {
+              $("i").html('<b>Pays: </b>' + country.continents).appendTo(countriesList) 
+            })
           }
         });
       }
@@ -72,8 +76,9 @@ function search(){
           
           success: function (data) {
             countriesList.empty();
-              $("i").html('<b>Pays: </b>' + data).appendTo(countriesList) 
-            
+            data.map((country) => {
+              $("i").html('<b>Pays: </b>' + country.name.common).appendTo(countriesList) 
+            })
           }
         });
       }
