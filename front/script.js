@@ -16,7 +16,10 @@ function search(){
           success: function (data) {
             countriesList.empty();
             data.forEach((country) => {
-              $("i").html('<b>Capitale: </b>' + country.capital + '<b>Région: </b>' + country.region + '<b>Subrégion: </b>' + country.subregion).appendTo(countriesList) 
+              $("#1").html('<b>Capitale: </b>' + country.capital ),
+              $("#2").html('<b>Région: </b>' + country.region ),
+              $("#3").html('<b>Subrégion: </b>' + country.subregion )
+              .appendTo(countriesList) 
             })
           }
         });
