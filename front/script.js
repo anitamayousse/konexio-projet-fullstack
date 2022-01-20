@@ -29,7 +29,7 @@ function search(){
           success: function (data) {
             countriesList.empty();
             data.forEach((country) => {
-              $("i").html('<b>Capitale: </b>' + country.name.common + '<b>Région: </b>' + country.region + '<b>Subrégion: </b>' + country.subregion).appendTo(countriesList) 
+              $("i").html('<b>Pays: </b>' + country.name.common + '<b>Région: </b>' + country.region + '<b>Subrégion: </b>' + country.subregion).appendTo(countriesList) 
             })
           }
         });
@@ -52,9 +52,7 @@ function search(){
           
           success: function (data) {
             countriesList.empty();
-            data.forEach((country) => {
-              $("i").html('<b>Capitale: </b>' + country.name.common).appendTo(countriesList) 
-            })
+              $("i").html('<b>Pays: </b>' + data).appendTo(countriesList) 
           }
         });
       }
@@ -64,21 +62,18 @@ function search(){
           
           success: function (data) {
             countriesList.empty();
-            data.forEach((country) => {
-              $("i").html('<b>Capitale: </b>' + country.name.common).appendTo(countriesList) 
-            })
+              $("i").html('<b>Pays: </b>' + data).appendTo(countriesList) 
           }
         });
       }
       else if (africa){
         $.ajax({
-          url:"https://restcountries.com/v3.1/subregion/africa/all/",
+          url:"https://restcountries.com/v3.1/subregion/africa",
           
           success: function (data) {
             countriesList.empty();
-            data.forEach((country) => {
-              $("i").html('<b>Capitale: </b>' + country.name.common).appendTo(countriesList) 
-            })
+              $("i").html('<b>Pays: </b>' + data).appendTo(countriesList) 
+            
           }
         });
       }
