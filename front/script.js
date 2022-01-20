@@ -3,9 +3,9 @@ var countriesList = $('#countries');
 $("#btnShowData").click(search);
 function search(){
     var countryName = $('#country-name').val();
-    var countries = $("input[name='pays']:checked").val();
-    var capital = $("input[name='capitale']:checked").val();
-    var region = $("input[name='région']:checked").val();
+    var countries = $("input[value='pays']:checked").val();
+    var capital = $("input[value='capitale']:checked").val();
+    var region = $("input[value='région']:checked").val();
     var europe = $("option[value='Europe']:selected").val();
     var asia = $("option[value='Asia']:selected").val();
     var africa = $("option[value='Africa']:selected").val();
@@ -19,7 +19,6 @@ function search(){
               $("#1").html('<b>Capitale: </b>' + country.capital ),
               $("#2").html('<b>Région: </b>' + country.region ),
               $("#3").html('<b>Subrégion: </b>' + country.subregion )
-              .appendTo(countriesList) 
             })
           }
         });
@@ -35,24 +34,12 @@ function search(){
               $("#1").html('<b>Pays: </b>' + country.name.common ),
               $("#2").html('<b>Région: </b>' + country.region ),
               $("#3").html('<b>Subrégion: </b>' + country.subregion )
-              .appendTo(countriesList) 
             })
           }
         });
       }
       else if (region){
-        $.ajax({
-          url:"https://restcountries.com/v3.1/region/" + countryName,
-          
-          success: function (data) {
-            countriesList.empty();
-            data.forEach((country) => {
-              $("i").html('<b>Capitale: </b>' + country.name.common).appendTo(countriesList) 
-            })
-          }
-        });
-      }
-      else if (europe){
+      if (europe){
         $.ajax({
           url: "https://restcountries.com/v3.1/region/europ",
   
@@ -114,7 +101,9 @@ function search(){
         });     
       }
 }
+}
 /* To reset the result */
 $("#btnReset").click(function(){
-  $("ul").empty()
+  $("ul").empty(),
+  countryName.remove()
 });
