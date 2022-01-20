@@ -114,3 +114,7 @@ function search(){
         });     
       }
 }
+/* To reset the result */
+$("#btnReset").click(function(){
+  $("ul").empty()
+});
